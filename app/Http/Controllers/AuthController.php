@@ -14,7 +14,7 @@ class AuthController extends Controller
         $this->authService = $authService;
     }
     public function adminLoginPage(){
-        return view('admin.login');
+        return view('auth.admin-login');
     }
     public function customerLoginPage(){
         return view('customer.login');

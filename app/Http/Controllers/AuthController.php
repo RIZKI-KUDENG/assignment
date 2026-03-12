@@ -19,18 +19,6 @@ class AuthController extends Controller
     public function customerLoginPage(){
         return view('customer.login');
     }
-    // public function login(Request $request){
-    //     $user = $this->authService->login(
-    //         $request->username,
-    //         $request->password
-    //     );
-    //     if(!$user) return back()->with("error", "Invalid username or password");
-
-    //     if($user->role == "admin"){
-    //         return redirect()->route("admin.dashboard");
-    //     }
-    //     return redirect()->route("customer.dashboard");
-    // }
     public function logout(){
         Auth::logout();
         return redirect()->route("product");

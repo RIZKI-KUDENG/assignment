@@ -12,4 +12,5 @@ Route::get('/', function () {
 // Route::post('/login', [AuthController::class, 'login'] );
 // Route::post('/logout', [AuthController::class, 'logout'] );
 Route::livewire('/login/customer', 'pages::auth.login-customer');
+Route::livewire('/login/admin', 'pages::auth.login-admin');
 

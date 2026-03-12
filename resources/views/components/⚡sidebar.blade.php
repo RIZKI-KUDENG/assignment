@@ -5,10 +5,17 @@ use App\Controller\AuthController;
 
 new class extends Component
 {
-    public function logout(){
-        Auth::logout();
-        return redirect()->route("login.customer");
+   public function logout(){
+    $isAdmin = auth()->user()->role === 'admin';
+
+    Auth::logout();
+
+    if($isAdmin){
+        return redirect()->route('login.admin');
     }
+
+    return redirect()->route('login.customer');
+}
 };
 ?>
 <div>

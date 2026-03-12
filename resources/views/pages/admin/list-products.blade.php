@@ -50,6 +50,9 @@ new class extends Component {
 
     public function update(ProductService $service)
     {
+        if (auth()->user()->role !== 'admin') {
+            abort(403);
+        }
         $service->update($this->editId, [
             'name' => $this->name,
             'price' => $this->price,

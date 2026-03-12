@@ -12,11 +12,11 @@ Route::get('/', function () {
 // Route::post('/login', [AuthController::class, 'login'] );
 // Route::post('/logout', [AuthController::class, 'logout'] );
 Route::livewire('/login/customer', 'pages::auth.login-customer')->name('login.customer');
-Route::livewire('/login/admin', 'pages::auth.login-admin');
+Route::livewire('/login/admin', 'pages::auth.login-admin')->name('login.admin');
 
 //Products
 // Route::livewire('/admin/products', 'pages::admin.list-products')->name('admin.products');
-Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
 
     Route::livewire('/products', 'pages::admin.list-products')
         ->name('list-products');

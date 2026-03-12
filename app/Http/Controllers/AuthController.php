@@ -20,8 +20,15 @@ class AuthController extends Controller
         return view('customer.login');
     }
     public function logout(){
-        Auth::logout();
-        return redirect()->route("login.customer");
+    $isAdmin = Auth::guard('admin')->check();
+
+    Auth::logout();
+
+    if($isAdmin){
+        return redirect()->route('login.admin');
     }
+
+    return redirect()->route('login.customer');
+}
 
 }

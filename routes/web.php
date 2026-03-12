@@ -15,5 +15,11 @@ Route::livewire('/login/customer', 'pages::auth.login-customer')->name('login.cu
 Route::livewire('/login/admin', 'pages::auth.login-admin');
 
 //Products
-Route::livewire('/admin/products', 'pages::admin.list-products')->name('admin.products');
+// Route::livewire('/admin/products', 'pages::admin.list-products')->name('admin.products');
+Route::middleware(['auth'])->prefix('admin')->name('admin.')->group(function () {
+
+    Route::livewire('/products', 'pages::admin.list-products')
+        ->name('list-products');
+
+});
 

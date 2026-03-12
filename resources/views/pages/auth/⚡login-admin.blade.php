@@ -26,7 +26,7 @@ new class extends Component
         }
 
         if ($user->role == 'admin') {
-            return redirect()->route('admin.products');
+            return redirect()->route('admin.list-products');
         }
     }
 

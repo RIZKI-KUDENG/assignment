@@ -7,7 +7,7 @@ use App\Models\Product;
 
 class ProductService{
 
-    public function getAll(){
-        return Product::all();
+    public function getPaginated(){
+        return Product::orderBy('name', 'asc')->paginate(10);
     }
 }

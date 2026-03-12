@@ -27,6 +27,9 @@ new class extends Component
 
         if ($user->role == 'admin') {
             return redirect()->route('admin.list-products');
+        }else{
+            session()->flash('error', 'You are not an admin');
+            return redirect()->route('login.customer');
         }
     }
 

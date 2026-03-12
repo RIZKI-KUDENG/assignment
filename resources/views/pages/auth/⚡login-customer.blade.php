@@ -27,11 +27,14 @@ new class extends Component {
             return;
         }
 
-        if ($user->role == 'admin') {
-            return redirect()->route('admin.dashboard');
+        if ($user->role == 'customer') {
+            return redirect()->route('customer.dashboard');
+        }else{
+            session()->flash('error', 'You are not a customer');
+            return;
         }
 
-        return redirect()->route('customer.dashboard');
+        
     }
 };
 ?>

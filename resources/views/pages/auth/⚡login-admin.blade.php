@@ -1,7 +1,7 @@
 <?php
 
-use Livewire\Component;
 use App\Services\AuthService;
+use Livewire\Component;
 
 new class extends Component
 {
@@ -26,15 +26,17 @@ new class extends Component
         }
 
         if ($user->role == 'admin') {
-            return redirect()->route('admin.index');
+            return redirect()->route('admin.products');
         }
     }
 
 
 };
+
 ?>
 
-<div class="flex flex-col justify-center items-center h-screen">
+
+    <div class="flex flex-col justify-center items-center h-screen">
     @if(session()->has('error'))
         <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-4">
             <span class="block sm:inline">{{ session('error') }}</span>

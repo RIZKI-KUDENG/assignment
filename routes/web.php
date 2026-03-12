@@ -11,6 +11,9 @@ Route::get('/', function () {
 // Route::get('/login/customer', [AuthController::class, 'customerLoginPage'] );
 // Route::post('/login', [AuthController::class, 'login'] );
 // Route::post('/logout', [AuthController::class, 'logout'] );
-Route::livewire('/login/customer', 'pages::auth.login-customer');
+Route::livewire('/login/customer', 'pages::auth.login-customer')->name('login.customer');
 Route::livewire('/login/admin', 'pages::auth.login-admin');
+
+//Products
+Route::livewire('/admin/products', 'pages::admin.list-products')->name('admin.products');
 

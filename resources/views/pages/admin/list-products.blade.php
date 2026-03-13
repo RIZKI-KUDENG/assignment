@@ -69,20 +69,20 @@ new class extends Component {
 
     <div class="flex-1 p-6">
 
-        <h1 class="text-2xl font-bold mb-4">Halaman List Produk</h1>
+        <h1 class="text-2xl font-bold mb-4">Product List Page</h1>
         <div class="flex justify-between mb-4">
 
-            <input type="text" wire:model.live.debounce.500ms="search" placeholder="Search produk..."
+            <input type="text" wire:model.live.debounce.500ms="search" placeholder="Search product..."
                 class="border px-3 py-2 rounded w-64">
 
             <select wire:model.live="sort" class="border px-3 py-2 rounded">
 
                 <option value="asc">
-                    Harga Termurah
+                    Lowest Price
                 </option>
 
                 <option value="desc">
-                    Harga Termahal
+                    Highest Price
                 </option>
 
             </select>
@@ -92,9 +92,9 @@ new class extends Component {
             <thead class="bg-gray-200">
                 <tr>
                     <th class="p-2 border">No</th>
-                    <th class="p-2 border">Nama Produk</th>
-                    <th class="p-2 border">Harga</th>
-                    <th class="p-2 border">Aksi</th>
+                    <th class="p-2 border">Name</th>
+                    <th class="p-2 border">Price</th>
+                    <th class="p-2 border">Action</th>
                 </tr>
             </thead>
 
@@ -123,7 +123,7 @@ new class extends Component {
                             </button>
 
                             <button
-                                onclick="confirm('Yakin ingin menghapus produk?') || event.stopImmediatePropagation()"
+                                onclick="confirm('Are you sure?') || event.stopImmediatePropagation()"
                                 wire:click="delete({{ $product->id }})"
                                 class="bg-red-500 text-white px-3 py-1 rounded">
                                 Delete
@@ -150,7 +150,7 @@ new class extends Component {
     <div class="bg-white p-6 rounded w-96">
 
         <h2 class="text-lg font-bold mb-4">
-            Edit Produk
+            Edit Product
         </h2>
 
         <input

@@ -13,7 +13,7 @@ new class extends Component {
             'price' => $this->price,
         ]);
 
-        session()->flash('success', 'Produk berhasil ditambahkan');
+        session()->flash('success', 'Product created successfully');
 
         $this->reset(['name', 'price']);
     }
@@ -28,7 +28,7 @@ new class extends Component {
     <div class=" flex-1 p-8">
 
         <h1 class="text-2xl font-bold text-gray-800 mb-6">
-            Tambah Produk
+            Create Product
         </h1>
 
         <div class="bg-white shadow-lg rounded-xl p-6 max-w-md">
@@ -40,24 +40,24 @@ new class extends Component {
             <form wire:submit.prevent="addProduct" class="space-y-5">
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">
-                        Nama Produk
+                        Product Name
                     </label>
 
-                    <input type="text" wire:model="name" placeholder="Contoh: Ayam Geprek"
+                    <input type="text" wire:model="name" placeholder="Example: Product A"
                         class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
 
                 <div>
                     <label class="block text-sm font-medium text-gray-700 mb-1">
-                        Harga
+                        Product Price
                     </label>
 
-                    <input type="number" wire:model="price" placeholder="Contoh: 15000"
+                    <input type="number" wire:model="price" placeholder="Example: 10000"
                         class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
                 </div>
                 <button type="submit"
                     class="w-full bg-blue-600 text-white font-medium py-2 rounded-lg hover:bg-blue-700 transition">
-                    Tambah Produk
+                    Submit
                 </button>
 
             </form>

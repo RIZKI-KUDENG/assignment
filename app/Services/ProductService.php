@@ -28,4 +28,7 @@ class ProductService{
     public function update($id, $data){
         Product::findOrFail($id)->update($data);
     }
+    public function create($data){
+        Product::create($data);
+    }
 }

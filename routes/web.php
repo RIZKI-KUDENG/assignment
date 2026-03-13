@@ -21,5 +21,8 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
     Route::livewire('/products', 'pages::admin.list-products')
         ->name('list-products');
 
+    Route::livewire('/products/create', 'pages::admin.create-product')
+        ->name('create-product');
+
 });
 

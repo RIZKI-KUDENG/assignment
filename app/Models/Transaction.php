@@ -14,4 +14,12 @@ class Transaction extends Model
         "total_price",
         "transaction_date"
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function transactionDetails(){
+        return $this->hasMany(TransactionDetail::class);
+    }
 }

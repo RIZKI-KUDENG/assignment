@@ -27,8 +27,9 @@ new class extends Component
     
     <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
         @if(auth()->user()->role === 'admin')
-            <a href="{{ route('admin.list-products') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">📦 List Produk</a>
+            <a href="{{ route('admin.list-products') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">📦 Product List</a>
             <a href="{{ route('admin.create-product') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">➕ Create Product</a>
+            <a href="{{ route('admin.list-transactions') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">💸 Transactions List</a>
             
         @elseif(auth()->user()->role === 'customer')
             <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">🛍️ Belanja</a>

@@ -23,6 +23,7 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
 
     Route::livewire('/products/create', 'pages::admin.create-product')
         ->name('create-product');
+        Route::livewire('/transaction', 'pages::admin.list-transactions')->name('list-transactions');
 
 });
 

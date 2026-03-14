@@ -33,6 +33,7 @@ new class extends Component
             
         @elseif(auth()->user()->role === 'customer')
             <a href="{{ route('customer.list-transactions') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">💸 Transactions List</a>
+            <a href="{{ route('customer.create-transaction') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">➕ Make Transaction</a>
         @endif
     </nav>
 

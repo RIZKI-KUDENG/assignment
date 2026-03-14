@@ -31,7 +31,7 @@ new class extends Component {
             return redirect()->route('customer.list-transactions');
         }else{
             session()->flash('error', 'You are not a customer');
-            return;
+            return redirect()->route('login.admin');
         }
 
         

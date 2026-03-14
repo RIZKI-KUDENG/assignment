@@ -26,5 +26,6 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
 Route::middleware(['customer'])->prefix('customer')->name('customer.')->group(function (){
 
     Route::livewire('/transaction', 'pages::customer.list-transactions')->name('list-transactions');
+    Route::livewire('transaction/create', 'pages::customer.create-transaction')->name('create-transaction');
 });
 

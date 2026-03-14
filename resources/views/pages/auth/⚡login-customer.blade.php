@@ -28,7 +28,7 @@ new class extends Component {
         }
 
         if ($user->role == 'customer') {
-            return redirect()->route('customer.dashboard');
+            return redirect()->route('customer.list-transactions');
         }else{
             session()->flash('error', 'You are not a customer');
             return;

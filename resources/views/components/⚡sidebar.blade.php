@@ -32,7 +32,7 @@ new class extends Component
             <a href="{{ route('admin.list-transactions') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">💸 Transactions List</a>
             
         @elseif(auth()->user()->role === 'customer')
-            <a href="#" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">🛍️ Belanja</a>
+            <a href="{{ route('customer.list-transactions') }}" class="block px-4 py-3 rounded-lg hover:bg-gray-800 transition-colors">💸 Transactions List</a>
         @endif
     </nav>
 

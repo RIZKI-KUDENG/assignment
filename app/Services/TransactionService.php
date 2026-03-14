@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Services;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Transaction;
 
@@ -20,8 +21,8 @@ class TransactionService
    public function getPaginatedCustomer($search, $sort)
 {
     return Transaction::query()
-        ->where('user_id', auth()->id)
-        ->when($search, fn($q) => $q->where('id', 'like', "%$search%"))
+        ->where('user_id', Auth::user()->id) 
+        ->when($search, fn($q) => $q->where('total_quantity', 'like', "%$search%"))
         ->orderBy('transaction_date', $sort)
         ->paginate(10);
 }

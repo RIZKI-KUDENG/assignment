@@ -17,4 +17,12 @@ class TransactionService
             ->orderBy('transaction_date', $sort)
             ->paginate(10);
     }
+   public function getPaginatedCustomer($search, $sort)
+{
+    return Transaction::query()
+        ->where('user_id', auth()->id)
+        ->when($search, fn($q) => $q->where('id', 'like', "%$search%"))
+        ->orderBy('transaction_date', $sort)
+        ->paginate(10);
+}
 }

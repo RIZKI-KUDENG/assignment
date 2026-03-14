@@ -16,7 +16,7 @@ class ProductService{
                 $q->where('name','like','%'.$search.'%');
             })
 
-            ->orderBy('price', $sort)
+            ->orderBy('name', $sort)
 
             ->paginate(10);
     }

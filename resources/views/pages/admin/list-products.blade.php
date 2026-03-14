@@ -78,11 +78,11 @@ new class extends Component {
             <select wire:model.live="sort" class="border px-3 py-2 rounded">
 
                 <option value="asc">
-                    Lowest Price
+                    A-Z
                 </option>
 
                 <option value="desc">
-                    Highest Price
+                    Z-A
                 </option>
 
             </select>
